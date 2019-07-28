@@ -1,0 +1,59 @@
+// 4.0 混合器使用@mixin标识符定义,然后就可以在你的样式表中通过@include来使用这个混合器，放在你希望的任何地方。@include调用会把混合器中的所有样式提取出来放在@include被调用的地方。如果像下边这样写：
+@mixin yuanjiao {
+    border-radius: 5px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+}
+@mixin list {
+    list-style: none;
+    li {
+        margin: 0;
+        padding: 0;
+    }
+}
+@mixin linkColor($normal, $hover, $visited) {
+    color: $normal;
+    &:hover { color: $hover }
+    &:visited { color: $visited }
+}
+@mixin linkColorTwo($normal: red, $hover: blue, $visited: green) {
+    color: $normal;
+    &:hover { color: $hover }
+    &:visited { color: $visited }
+}
+.btn {
+    width: 120px;
+    padding: 20px;
+    @include yuanjiao();
+}
+
+// 4.1 何时使用混合器
+// 利用混合器，可以很容易地在样式表的不同地方共享样式。如果你发现自己在不停地重复一段样式，那就应该把这段样式构造成优良的混合器，尤其是这段样式本身就是一个逻辑单元，比如说是一组放在一起有意义的属性。判断一组属性是否应该组合成一个混合器，一条经验法则就是你能否为这个混合器想出一个好的名字。如果你能找到一个很好的短名字来描述这些属性修饰的样式，比如rounded-cornersfancy-font或者no-bullets，那么往往能够构造一个合适的混合器。如果你找不到，这时候构造一个混合器可能并不合适。
+
+// 4.2 混合器中的CSS规则
+ul {
+    color: red;
+    @include list();
+}
+
+// 4.3 给混合器传参
+a {
+    @include linkColor(red, blue, green);
+}
+
+// 4.4 默认参数值
+span {
+    @include linkColorTwo(#333)
+}
+
+// 4.5 使用选择器继承来精简CSS
+.father {
+    color: #333;
+    border: 1px solid red;
+    li { list-style-type: none; }
+}
+.son {
+    width: 120px;
+    @extend .father;
+}
+

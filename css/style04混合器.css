@@ -1,0 +1,48 @@
+.btn {
+  width: 120px;
+  padding: 20px;
+  border-radius: 5px;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+}
+
+ul {
+  color: red;
+  list-style: none;
+}
+ul li {
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  color: red;
+}
+a:hover {
+  color: blue;
+}
+a:visited {
+  color: green;
+}
+
+span {
+  color: #333;
+}
+span:hover {
+  color: blue;
+}
+span:visited {
+  color: green;
+}
+
+.father, .son {
+  color: #333;
+  border: 1px solid red;
+}
+.father li, .son li {
+  list-style-type: none;
+}
+
+.son {
+  width: 120px;
+}
