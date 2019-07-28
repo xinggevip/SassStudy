@@ -1,7 +1,7 @@
 // 3.0 通常，有些sass文件用于导入，你并不希望为每个这样的文件单独地生成一个css文件。对此，sass用一个特殊的约定来解决。
-
+// 加下划线导入为Partail（半成品），不会被生成
 // 3.1 使用SASS部分文件;
-@import "themes/night-sky";
+@import "themes/_night-sky";
 @import "themes/css.css";   // @import url(themes/css.css);
 // 3.2 默认变量值
 $night-sky-color: blue !default;
@@ -11,11 +11,9 @@ h1 { color: $night-sky-color }
 
 // 3.3 嵌套导入
 .container {
-    @import "themes/blue-theme.scss";
+    @import "themes/_blue-theme.scss";
 }
 // @import "css.css";    //导入css文件
 // @import "http://ss/xx";    //导入css文件
 // @import url(css.css);    //导入css文件
 // @import "a.scss";    //导入scss文件
-
-// 
