@@ -1,0 +1,5 @@
+// 这行注释不会被生成
+/* 这行注释会在"非压缩格式"下生成 */
+/*! 这行代码会强制在所有格式下生成 
+*   sass --watch sass:css --style compressed --sourcemap=none
+*/
