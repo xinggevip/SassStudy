@@ -125,6 +125,9 @@ sass --watch input.scss:output.css --sourcemap
 //选择编译格式并添加调试map
 sass --watch input.scss:output.css --style expanded --sourcemap
 
+//选择编译格式并“不”添加调试map
+sass --watch sass:css --style expanded --sourcemap=none
+
 //开启debug信息
 sass --watch input.scss:output.css --debug-info
 ```
