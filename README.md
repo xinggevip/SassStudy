@@ -5,8 +5,7 @@
   英文官网：https://sasscss.org/
 
   中文官网：https://www.sass.hk/
-  sass --watch sass:css --style expanded
-
+  
 - sass 特性
 
   Sass是世界上最成熟，最稳定，最强大的专业级  CSS扩展语言。
