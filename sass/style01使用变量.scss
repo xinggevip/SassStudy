@@ -1,0 +1,9 @@
+// 全局变量
+$nav-color:#F90;    // 变量的声明
+nav{
+    // 局部变量
+    $width:100px;   // 变量的声明
+    width: $width;  // 变量的引用
+    color: $nav-color;
+    border: 1px solid $nav-color;   // 变量的引用
+}
