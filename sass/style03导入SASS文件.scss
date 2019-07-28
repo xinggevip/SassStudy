@@ -1,0 +1,21 @@
+// 3.0 通常，有些sass文件用于导入，你并不希望为每个这样的文件单独地生成一个css文件。对此，sass用一个特殊的约定来解决。
+
+// 3.1 使用SASS部分文件;
+@import "themes/night-sky";
+@import "themes/css.css";   // @import url(themes/css.css);
+// 3.2 默认变量值
+$night-sky-color: blue !default;
+// 它很像css属性中!important标签的对立面，不同的是!default用于变量，含义是：如果这个变量被声明赋值了，那就用它声明的值，否则就用这个默认值。
+// 因为导入的文件已经设置了$night-sky-colo，所以他的值为导入文件中的值，否则为自己设置的值
+h1 { color: $night-sky-color }
+
+// 3.3 嵌套导入
+.container {
+    @import "themes/blue-theme.scss";
+}
+// @import "css.css";    //导入css文件
+// @import "http://ss/xx";    //导入css文件
+// @import url(css.css);    //导入css文件
+// @import "a.scss";    //导入scss文件
+
+// 
